@@ -29,55 +29,7 @@
         .sub {
             color: #9aa0a6;
             font-size: 0.9rem;
-            margin-bottom: 2rem;
-        }
-
-        /* --- Estilos para los botones de las pestañas --- */
-        .tab-container {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 2rem;
-        }
-
-        .tab-btn {
-            background: #181a20;
-            border: 1px solid #2a2d35;
-            color: #9aa0a6;
-            padding: 0.6rem 1.5rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: all 0.2s ease;
-        }
-
-        .tab-btn:hover {
-            background: #1f222a;
-            color: #e6e6e6;
-        }
-
-        .tab-btn.active {
-            background: #2a2d35;
-            color: #fff;
-            border-color: #3f444f;
-        }
-
-        /* --- Contenedores de contenido --- */
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
+            margin-bottom: 2.5rem;
         }
 
         .rama {
@@ -162,71 +114,60 @@
 
     <h1>Reportes</h1>
     <p class="sub">Selecciona una rama y un reporte</p>
+    
+    <div>
+        <p class="rama-title">main</p>
+        <div class="cards">
 
-    <div class="tab-container">
-        <button class="tab-btn active" onclick="openTab('rama-dev', this)">DEV</button>
-        <button class="tab-btn" onclick="openTab('rama-main', this)">main</button>
+            <a class="card" href="./source-report.html">
+                <span class="badge badge-front">Entrega Reports back</span>
+                <h2>Reporte finl backend</h2>
+                <p>main</p>
+                <span class="arrow">Ver reporte →</span>
+            </a>
+
+            <a class="card" href="./source-report (1).html">
+                <span class="badge badge-front">Entrega Reports front</span>
+                <h2>Reporte final frontend</h2>
+                <p>main</p>
+                <span class="arrow">Ver reporte →</span>
+            </a>
+            
+            <a class="card" href="./back/main">
+                <span class="badge badge-back">Back</span>
+                <h2>Reporte backend</h2>
+                <p>main</p>
+                <span class="arrow">Ver reporte →</span>
+            </a>
+
+            <a class="card" href="./front/main">
+                <span class="badge badge-front">Front</span>
+                <h2>Reporte frontend</h2>
+                <p>main</p>
+                <span class="arrow">Ver reporte →</span>
+            </a>
+        </div>
     </div>
+    
+    <div class="rama">
+        <p class="rama-title">dev</p>
+        <div class="cards">
+            <a class="card" href="./back/DEV">
+                <span class="badge badge-back">Back</span>
+                <h2>Reporte backend</h2>
+                <p>Rama dev</p>
+                <span class="arrow">Ver reporte →</span>
+            </a>
 
-    <div id="rama-dev" class="tab-content active">
-        <div class="rama">
-            <p class="rama-title">Rama Actual: DEV</p>
-            <div class="cards">
-                <a class="card" href="./back/DEV">
-                    <span class="badge badge-back">Back</span>
-                    <h2>Reporte backend</h2>
-                    <p>Rama dev</p>
-                    <span class="arrow">Ver reporte →</span>
-                </a>
-
-                <a class="card" href="./front/DEV">
-                    <span class="badge badge-front">Front</span>
-                    <h2>Reporte frontend</h2>
-                    <p>Rama dev</p>
-                    <span class="arrow">Ver reporte →</span>
-                </a>
-            </div>
+            <a class="card" href="./front/DEV">
+                <span class="badge badge-front">Front</span>
+                <h2>Reporte frontend</h2>
+                <p>Rama dev</p>
+                <span class="arrow">Ver reporte →</span>
+            </a>
         </div>
     </div>
 
-    <div id="rama-main" class="tab-content">
-        <div class="rama">
-            <p class="rama-title">Rama Actual: MAIN</p>
-            <div class="cards">
-                <a class="card" href="./reporte-back-main.html">
-                    <span class="badge badge-back">Back</span>
-                    <h2>Reporte backend</h2>
-                    <p>Rama main</p>
-                    <span class="arrow">Ver reporte →</span>
-                </a>
-
-                <a class="card" href="./reporte-front-main.html">
-                    <span class="badge badge-front">Front</span>
-                    <h2>Reporte frontend</h2>
-                    <p>Rama main</p>
-                    <span class="arrow">Ver reporte →</span>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function openTab(tabId, btnElement) {
-            // Ocultar todos los contenidos
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
-            });
-
-            // Quitar clase active de todos los botones
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-
-            // Mostrar el contenido seleccionado y activar el botón
-            document.getElementById(tabId).classList.add('active');
-            btnElement.classList.add('active');
-        }
-    </script>
 
 </body>
 
